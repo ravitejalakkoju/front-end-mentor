@@ -63,6 +63,7 @@
         box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
         cursor: pointer;
         transition: 0.2s;
+        position: relative;
       }
       .grid__item:hover {
         transform: translateY(-0.5%);
@@ -75,30 +76,34 @@
         height: 25rem;
         object-fit: cover;
       }
+
+      .card__icons {
+        font-size: 1.8rem;
+      }
+
+      .card__tools {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 1rem;
+        list-style: none;
+      }
+
+      .card__tools li {
+        background-color: white;
+        padding: 3px;
+        border-radius: 3px;
+        margin-bottom: 5px;
+      }
+
       .card__content {
         padding: 3rem 3rem;
-      }
-      .card__details {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1.5rem;
       }
       .card__header {
         font-size: 2rem;
         font-weight: 700;
         color: #0d0d0d;
-      }
-      .card__tools {
-        list-style: none;
-        display: flex;
-        align-items: center;
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        font-weight: 700;
-      }
-      .card__tools li {
-        margin: 0 5px;
+        margin-bottom: 1.5rem;
       }
       .card__text {
         font-size: 1.5rem;
@@ -151,14 +156,12 @@
   <div class="grid">
     <div class="grid__item">
       <div class="card"><img class="card__img" src="./product-preview-card-component-main/design/desktop-design.jpg" alt="Desert">
+        <ul class="card__tools">
+          <li class="card__icons html"><i class="fa-brands fa-html5"></i></li>
+          <li class="card__icons css"><i class="fa-brands fa-css3-alt"></i></li>
+        </ul>
         <div class="card__content">
-          <div class="card__details">
-            <h1 class="card__header">Product preview card component</h1>
-            <ul class="card__tools">
-              <li class="html">html</li>
-              <li class="css">css</li>
-            </ul>
-          </div>
+          <h1 class="card__header">Product preview card component</h1>
           <p class="card__text">Building out this <strong>product preview card component</strong> and get it looking as close to the design as possible.</p>
           <div class="card__links">
             <a class="card__btn" style="background: hsl(30, 38%, 92%); color: hsl(30, 38%, 40%);" href="./product-preview-card-component-main/index.html">Check it out <span>&rarr;</span></a>
@@ -169,14 +172,12 @@
     </div>
     <div class="grid__item">
       <div class="card"><img class="card__img" src="./qr-code-component-main/design/desktop-design.jpg" alt="Canyons">
+        <ul class="card__tools">
+          <li class="card__icons html"><i class="fa-brands fa-html5"></i></li>
+          <li class="card__icons css"><i class="fa-brands fa-css3-alt"></i></li>
+        </ul>
         <div class="card__content">
-          <div class="card__details">
-            <h1 class="card__header">QR Code Component</h1>
-            <ul class="card__tools">
-              <li class="html">html</li>
-              <li class="css">css</li>
-            </ul>
-          </div>
+          <h1 class="card__header">QR Code Component</h1>
           <p class="card__text">Building out this <strong>QR card component</strong> and get it looking as close to the design as possible.</p>
           <div class="card__links">
             <a class="card__btn" style="background: hsl(212, 45%, 89%); color: hsl(212, 45%, 40%);" href="./qr-code-component-main/index.html">Check it out <span>&rarr;</span></a>
