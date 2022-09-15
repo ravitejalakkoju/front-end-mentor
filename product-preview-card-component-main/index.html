@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fraunces">
+  
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    body {
+      background: hsl(30, 38%, 92%);
+      display: flex; justify-content: center; align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      font-size: 14px;
+    }
+
+    .card { 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      border-radius: 10px; 
+      padding: 0; 
+      background: white;
+      max-width: 30vw;
+    }
+
+    .card > .left {
+      min-width: 50%;
+      min-height: 50vh;
+      max-height: 100vh;
+      background-image: url("./images/image-product-desktop.jpg");
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      border-radius: 10px 0 0 10px;
+      background-size: cover;
+      display: block;
+    }
+
+    /*.card img {
+      min-width: 50%; 
+      max-width: 100%;
+      height: 100%; 
+    }*/
+
+    .card > .right {
+      max-width: 50%;
+      margin: 30px;
+    }
+
+    .card > .right > p, .card > .right > h5 {
+      font-family: Montserrat;
+      color: hsl(228, 12%, 48%);
+    }
+
+    .card > .right > h5 {
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      margin: 0;
+    }
+
+    .card > .right > p {
+      font-weight: 500;
+      line-height: 150%;
+    }
+
+    .card > .right > .title {
+      font-weight: 700;
+      font-size: 2rem;
+    }
+
+    .card > .right > .pricing {
+      font-weight: 700;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      color: hsl(158, 36%, 37%);
+      margin-bottom: 20px;
+    }
+
+    .card > .right > .pricing > s {
+      font-weight: 500;
+      font-size: 0.75rem;
+      margin-left: 20px;
+      color: hsl(228, 12%, 48%);
+    }
+
+    .card > .right > .title, .card > .right > .pricing {
+      font-family: Fraunces;
+    }
+
+    .card > .right > button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      background-color: hsl(158, 36%, 37%);
+      color: white;
+      font-weight: 700;
+      font-family: Montserrat;
+      border: none;
+    }
+
+    @media only screen and (max-width: 1580px) {
+      .card {
+        min-width: 70%;
+      }
+
+      .card > .left{
+        width: 70%;
+      }
+    }
+
+    @media only screen and (max-width: 798px) {
+      .card {
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 98%;
+      }
+
+      .card > .left {
+        min-height: 30vh;
+        width: 100%;
+        background-image: url("./images/image-product-mobile.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 10px 10px 0 0;
+        display: block;
+      }
+
+      .card > .right {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="card">
+    <div class="left"></div>
+    <div class="right">
+      <h5>Perfume</h5>
+      <h1 class="title">Gabrielle Essence Eau De Parfum</h1>
+      <p>
+        A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.
+      </p>
+       <div class="pricing">
+         $149.99 <s>$169.99</s>
+       </div>
+      <button>Add to Cart</button>
+    </div>
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </footer>
+</body>
+</html>
