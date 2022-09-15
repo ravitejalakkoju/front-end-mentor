@@ -81,50 +81,73 @@
         color: #3d3d3d;
         margin-bottom: 2.5rem;
       }
+      .card__links {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
       .card__btn {
         display: block;
-        width: 100%;
+        width: 90%;
         padding: 1.5rem;
         font-size: 2rem;
         text-align: center;
-        color: #3363ff;
-        background-color: #e6ecff;
+        color: #000000;
+        background-color: #EEEEEE;
         border: none;
-        border-radius: 0.4rem;
+        border-radius: 0.4rem 0 0 0.4rem;
         transition: 0.2s;
         cursor: pointer;
         text-decoration: none;
       }
+
       .card__btn span {
         margin-left: 1rem;
         transition: 0.2s;
       }
       .card__btn:hover, .card__btn:active {
-        background-color: #dce4ff;
+        background-color: #CCCCCC;
       }
       .card__btn:hover span, .card__btn:active span {
         margin-left: 1.5rem;
       }
+
+      .card__github {
+        padding: 1.5rem;
+        font-size: 2rem;
+        background: black;
+        color: white;
+        border-radius: 0 0.4rem 0.4rem 0;
+      }
     </style>
   </head>
+  <body>
+  <div class="grid">
+    <div class="grid__item">
+      <div class="card"><img class="card__img" src="./product-preview-card-component-main/design/desktop-design.jpg" alt="Desert">
+        <div class="card__content">
+          <h1 class="card__header">Product preview card component</h1>
+          <p class="card__text">Building out this <strong>product preview card component</strong> and get it looking as close to the design as possible.</p>
+          <div class="card__links">
+            <a class="card__btn" style="background: hsl(30, 38%, 92%); color: hsl(30, 38%, 40%);" href="./product-preview-card-component-main/index.html">Check it out <span>&rarr;</span></a>
+            <a class="card__github" style="background: hsl(158, 36%, 37%); color: hsl(30, 38%, 92%);"href="https://github.com/ravitejalakkoju/front-end-mentor/tree/main/product-preview-card-component-main"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid__item">
+      <div class="card"><img class="card__img" src="./qr-code-component-main/design/desktop-design.jpg" alt="Canyons">
+        <div class="card__content">
+          <h1 class="card__header">QR Code Component</h1>
+          <p class="card__text">Building out this <strong>QR card component</strong> and get it looking as close to the design as possible.</p>
+          <div class="card__links">
+            <a class="card__btn" style="background: hsl(212, 45%, 89%); color: hsl(212, 45%, 40%);" href="./qr-code-component-main/index.html">Check it out <span>&rarr;</span></a>
+            <a class="card__github" style="background: hsl(218, 44%, 22%); color: hsl(212, 45%, 89%);" href="https://github.com/ravitejalakkoju/front-end-mentor/tree/main/qr-code-component-main"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://kit.fontawesome.com/862bd05429.js" crossorigin="anonymous"></script>
+  </body>
 </html>
-<div class="grid">
-  <div class="grid__item">
-    <div class="card"><img class="card__img" src="./product-preview-card-component-main/design/desktop-design.jpg" alt="Desert">
-      <div class="card__content">
-        <h1 class="card__header">Product preview card component</h1>
-        <p class="card__text">Building out this <strong>product preview card component</strong> and get it looking as close to the design as possible.</p>
-        <a class="card__btn" href="./product-preview-card-component-main/index.html">Check it out <span>&rarr;</span></a>
-      </div>
-    </div>
-  </div>
-  <div class="grid__item">
-    <div class="card"><img class="card__img" src="./qr-code-component-main/design/desktop-design.jpg" alt="Canyons">
-      <div class="card__content">
-        <h1 class="card__header">QR Code Component</h1>
-        <p class="card__text">Building out this <strong>QR card component</strong> and get it looking as close to the design as possible.</p>
-        <a class="card__btn" href="./qr-code-component-main/index.html">Check it out <span>&rarr;</span></a>
-      </div>
-    </div>
-  </div>
-</div>
