@@ -15,8 +15,9 @@
 
   <!-- Rating state start -->
   <main>
+    <h1 style="display: none;">Interactive rating component</h1>
     <div id="rating__to__submit" class="rating__card">
-      <img src="./images/icon-star.svg" class="rating__icon">
+      <img src="./images/icon-star.svg" alt="icon-star" class="rating__icon">
       <p class="rating__question">How did we do?</p>
 
       <p class="rating__description">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
@@ -48,7 +49,7 @@
     </div>
 
     <div id="rating__submitted" class="rating__card">
-      <img src="./images/illustration-thank-you.svg" class="rating__thanks__icon">
+      <img src="./images/illustration-thank-you.svg" alt="thank-you-illustration" class="rating__thanks__icon">
       <div class="rating__selected">You selected <span id="rating__value"></span> out of 5</div>
 
       <p class="rating__thanks">Thank you!</p>
@@ -61,7 +62,7 @@
     Coded by <a href="https://github.com/ravitejalakkoju" target="_blank">L N S S Ravi Teja</a>.
   </footer>
 
-  <script type="text/javascript">
+  <script>
     function getRating() {
       event.preventDefault();
       if (document.querySelector('input[name="rating"]:checked')) {
