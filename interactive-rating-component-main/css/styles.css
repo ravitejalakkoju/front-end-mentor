@@ -1,0 +1,116 @@
+:root {
+  --orange: hsl(25, 97%, 53%);
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(216, 12%, 54%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --light-dark-blue: hsl(213, 19%, 21%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+body { 
+  background: var(--very-dark-blue); 
+  font-family: Overpass; 
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 90vh;
+  color: var(--light-grey);
+  }
+.rating__card {
+  width: 280px;
+  border-radius: 20px;
+  background: var(--dark-blue);
+  padding: 20px;
+}
+.rating__icon {
+  padding: 10px;
+  background: var(--light-dark-blue);
+  border-radius: 50%;
+  height: 10px;
+}
+.rating__thanks__icon {
+  padding: 20px;
+  height: 5rem;
+}
+.rating__question, .rating__thanks {
+  color: var(--white);
+  font-size: 1.5rem;
+  margin: 15px 0 0 0;
+}
+.rating__description {
+  color: var(--light-grey);
+  font-size: 0.8rem;
+  line-height: 150%;
+}
+.rating__list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 20px 0;
+  font-size: 0.9rem;
+}
+.rating__list label {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  padding: 10px; 
+  text-align: center;
+  align-self: center;
+  color: var(--light-grey);
+  background: var(--light-dark-blue);
+}
+.rating__list label:first-child {
+  margin-left: 0;
+}
+.rating__list label:hover {
+  cursor: pointer;
+  color: white;
+  background: var(--medium-grey);
+}
+.rating__list label:active {
+  cursor: pointer;
+  color: white;
+  background: var(--orange);
+}
+.rating__button {
+  border-radius: 16px;
+  background: var(--orange);
+  border: none;
+  color: hsl(0, 0%, 100%);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+.rating__button:hover {
+  color: var(--orange);
+  background: white;
+}
+
+#rating__submitted.rating__card {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: none;
+}
+.rating__selected {
+  font-size: 0.8rem;
+  padding: 5px 15px;
+  background: var(--light-dark-blue);
+  border-radius: 15px;
+  color: var(--orange);
+  width: fit-content;
+  block-size: fit-content;
+}
