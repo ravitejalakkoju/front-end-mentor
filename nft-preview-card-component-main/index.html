@@ -11,11 +11,12 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
+    .attribution { font-size: 11px; text-align: center; margin-top: 2rem;}
     .attribution a { color: hsl(228, 45%, 44%); }
     :root {
       --white: hsl(0, 0%, 100%);
       --very-dark-blue: hsl(217, 54%, 11%);
+      --very-dark-blue-shadow: hsl(217, 54%, 10%);
       --very-dark-blue-card: hsl(216, 50%, 16%);
       --very-dark-blue-line: hsl(215, 32%, 27%);
       --soft-blue: hsl(215, 51%, 70%);
@@ -38,6 +39,8 @@
       background: var(--very-dark-blue-card);
       border-radius: 15px;
       width: 250px;
+      box-shadow: 15px 15px 0 var(--very-dark-blue-shadow), 
+        -15px 15px 0 var(--very-dark-blue-shadow);
     }
     .nft__picture img {
       border-radius: 10px;
@@ -73,7 +76,7 @@
       color: var(--white);
       font-weight: 300;
     }
-    .nft__title:hover {
+    .nft__title:hover, .nft__creator span:hover {
       color: var(--cyan);
       cursor: pointer;
     }
