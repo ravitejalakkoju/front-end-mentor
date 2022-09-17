@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Outfit">
   
   <title>Frontend Mentor | NFT preview card component</title>
 
@@ -12,22 +13,139 @@
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+    :root {
+      --white: hsl(0, 0%, 100%);
+      --very-dark-blue: hsl(217, 54%, 11%);
+      --very-dark-blue-card: hsl(216, 50%, 16%);
+      --very-dark-blue-line: hsl(215, 32%, 27%);
+      --soft-blue: hsl(215, 51%, 70%);
+      --cyan: hsl(178, 100%, 50%);
+      --bg-cyan: hsla(178, 100%, 50%, 0.5);
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      background: var(--very-dark-blue);
+      font-size: 18px;
+      font-family: Outfit;
+      color: var(--soft-blue);
+    }
+    .nft__card {
+      padding: 15px;
+      background: var(--very-dark-blue-card);
+      border-radius: 15px;
+      width: 250px;
+    }
+    .nft__picture img {
+      border-radius: 10px;
+      width: 100%;
+      display:block;
+    }
+    .nft__picture {
+      position: relative;
+      height: fit-content;
+      width: fit-content;
+      padding: 0;
+      margin: 0;
+    }
+    .nft__picture:hover::after {
+      content:"";
+      position:absolute;
+      left:0;
+      top:0;
+      width:100%;
+      height:100%;
+      border-radius: 10px;
+      background-image: url('./images/icon-view.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: var(--bg-cyan);
+      transition: all 0.5s ease 0s;
+      cursor: pointer;
+    }
+    .nft__title {
+      margin: 12px 0;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      color: var(--white);
+      font-weight: 300;
+    }
+    .nft__title:hover {
+      color: var(--cyan);
+      cursor: pointer;
+    }
+    .nft__description {
+      font-size: 0.85rem;
+      color: var(--soft-blue);
+      font-weight: 300;
+    }
+    .nft__details {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.7rem;
+    }
+    .nft__details img {
+      height: 12px;
+      margin-right: 3px;
+    }
+    .nft__cost, .nft__expiry {
+      display: flex;
+      align-items: center;
+    }
+    .nft__cost {
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+    .nft__expiry {
+      color: var(--soft-blue);
+    }
+    .nft__creator {
+      margin-top: 15px;
+      padding: 10px 0 5px 0;
+      border-top: 2px solid var(--very-dark-blue-line);
+      font-size: 0.7rem;
+      display: flex;
+      align-items: center;
+      color: var(--soft-blue);
+    }
+    .nft__creator img {
+      height: 1rem;
+      margin-right: 0.75rem;
+      border-radius: 50%;
+      border: 1px solid var(--white);
+    }
+    .nft__creator span {
+      color: var(--white);
+    }
   </style>
 </head>
 <body>
 
-  Equilibrium #3429
-
-  Our Equilibrium collection promotes balance and calm.
-
-  0.041 ETH
-  3 days left
-  
-  Creation of Jules Wyvern
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <main class="nft__card">
+    <div class="nft__picture">
+      <img src="./images/image-equilibrium.jpg">
+    </div>
+    <h1 class="nft__title">Equilibrium #3429</h1>
+    <p class="nft__description">Our Equilibrium collection promotes balance and calm.</p>
+    <div class="nft__details">
+      <span class="nft__cost">
+        <img src="./images/icon-ethereum.svg">0.041 ETH
+      </span>
+      <span class="nft__expiry">
+        <img src="./images/icon-clock.svg">3 days left
+      </span>
+    </div>
+    <div class="nft__creator">
+      <img src="./images/image-avatar.png">
+      Creation of <span>&nbsp;Jules Wyvern</span>
+    </div>
+  </main>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.  
+    Coded by <a href="https://github.com/ravitejalakkoju" target="_blank">L N S S Ravi Teja</a>.
+  </footer>
 </body>
 </html>
