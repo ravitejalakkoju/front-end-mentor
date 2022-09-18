@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Red+Hat+Display:500,700,900">
+  
+  <title>Frontend Mentor | Order summary card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; color: var(--desaturated-blue);}
+    .attribution a { color: hsl(228, 45%, 44%); }
+    :root {
+      --white: hsl(0, 0%, 100%);
+      --pale-blue: hsl(225, 100%, 94%);
+      --bright-blue: hsl(245, 75%, 52%);
+      --very-pale-blue: hsl(225, 100%, 98%);
+      --desaturated-blue: hsl(224, 23%, 55%);
+      --dark-blue: hsl(223, 47%, 23%);
+    }
+    body {
+      min-height: 100vh;
+      font-size: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: url('./images/pattern-background-desktop.svg') no-repeat, linear-gradient(to bottom, var(--pale-blue), var(--pale-blue));
+      background-size: contain;
+    }
+    @media only screen and (max-width: 500px) {
+      body {
+        background: url('./images/pattern-background-mobile.svg') no-repeat, linear-gradient(to bottom, var(--pale-blue), var(--pale-blue));
+      }
+    }
+    body, button {
+      font-family: 'Red Hat Display';
+    }
+    .order__card {
+      background: var(--white);
+      text-align: center;
+      width: 300px;
+      border-radius: 10px;
+    }
+    .order__card > img {
+      border-radius: 10px 10px 0 0;
+      width: 100%;
+    }
+    .order__summary {
+      padding: 30px;
+    }
+    .order__title {
+      font-size: 1.2rem;
+      font-weight: 900;
+      margin: 0;
+    }
+    .order__description {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--desaturated-blue);
+    }
+    .order__plan {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background: var(--very-pale-blue);
+      border-radius: 10px;
+      font-size: 0.7rem;
+      margin-top: 1rem;
+    }
+    .plan__details {
+      display: flex;
+    }
+    .plan__details > img {
+      height: 1.8rem;
+    }
+    .plan__description {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+    }
+    .plan__name {
+      font-weight: 900;
+      margin-bottom: 2px;
+    }
+    .plan__price {
+      font-weight: 500;
+      color: var(--desaturated-blue);
+      margin-bottom: 2px;
+    }
+    .plan__change {
+      color: var(--bright-blue);
+      text-decoration: underline;
+      font-size: 0.6rem;
+    }
+    .order__action {
+      display: flex;
+      flex-direction: column;
+    }
+    .order__accept {
+      border-radius: 10px;
+      padding: 0.75rem;
+      border: none;
+      background-color: var(--bright-blue);
+      color: var(--white);
+      font-weight: 700;
+      margin-top: 1.5rem;
+      font-size: 0.7rem;
+      box-shadow: 0 10px 10px var(--pale-blue);
+    }
+    .order__cancel {
+      font-size: 0.7rem;
+      font-weight: 900;
+      background: none;
+      border: none;
+      margin-top: 1rem;
+      padding: 0;
+      color: var(--desaturated-blue);
+    }
+  </style>
+</head>
+<body>
+  <main class="order__card">
+    <img src="./images/illustration-hero.svg" alt="illustration-hero">
+    <div class="order__summary">
+      <h1 class="order__title">Order Summary</h1>
+      <p class="order__description">You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!</p>
+      <div class="order__plan">
+        <div class="plan__details">
+          <img src="./images/icon-music.svg" alt="icon-music">
+          <div class="plan__description">
+            <span class="plan__name">Annual Plan</span>
+            <span class="plan__price">$59.99/year</span>
+          </div>
+        </div>
+        <a class="plan__change">Change</a>
+      </div>
+      <div class="order__action">
+        <button class="order__accept">Proceed to Payment</button>
+        <button class="order__cancel">Cancel Order</button>
+      </div>
+    </div>
+  </main>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/ravitejalakkoju" target="_blank">L N S S Ravi Teja</a>.
+  </footer>
+</body>
+</html>
