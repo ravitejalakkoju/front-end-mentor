@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend+Deca:400">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Big+Shoulders+Display:700">
+  
+  <title>Frontend Mentor | 3-column preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    :root {
+      --light-white: hsla(0, 0%, 100%, 0.5);
+      --bright-orange: hsl(31, 77%, 52%);
+      --dark-cyan: hsl(184, 100%, 22%);
+      --very-dark-cyan: hsl(179, 100%, 13%);
+    }
+    body {
+      min-height: 100vh;
+      background: var(--white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-size: 15px;
+      font-family: 'Lexend Deca';
+    }
+    .car__cards {
+      border-radius: 10px;
+      display: flex;
+      width: 700px;
+    }
+    .car__card {
+      width: 33.3%;
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      min-height: 20rem;
+    }
+    .car__card.sedan {
+      background-color: var(--bright-orange);
+      border-radius: 10px 0 0 10px;
+    }
+    .car__card.suv {
+      background-color: var(--dark-cyan);
+    }
+    .car__card.luxury {
+      background-color: var(--very-dark-cyan);
+      border-radius: 0 10px 10px 0;
+    }
+    .car__card img {
+      height: 1.75rem;
+    }
+    .car__card .title {
+      font-size: 1.75rem;
+      font-family: 'Big Shoulders Display';
+      text-transform: uppercase;
+      color: white;
+      font-weight: 700;
+    }
+    .car__card .description {
+      color: var(--light-white);
+      font-size: 0.75rem;
+      line-height: 150%;
+      word-wrap: break-word;
+    }
+    .btn-learn {
+      padding: 0.6rem 1.2rem;
+      border-radius: 2rem;
+      border: none;
+      margin-bottom: 0.25rem;
+      font-weight: 700;
+      width: fit-content;
+    }
+    .sedan .btn-learn {
+      color: var(--bright-orange);
+    }
+    .btn-learn:hover {
+      box-shadow:inset 0px 0px 0px 1px white;
+      background-color: transparent;
+      color: white;
+      font-weight: 400;
+    }
+    @media only screen and (max-width: 500px) {
+      .car__cards {
+        flex-direction: column;
+        width: 90%;
+        margin: 4rem 0;
+      }
+      .car__card {
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .car__card.sedan {
+        border-radius: 10px 10px 0 0;
+      }
+      .car__card.luxury {
+        border-radius: 0 0 10px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <main class="car__cards">
+    <div class="car__card sedan">
+      <div>
+        <img src="./images/icon-sedans.svg" alt="icon-sedans">
+        <h1 class="title">Sedans</h1>
+        <p class="description">Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city or on your next road trip.</p>
+      </div>
+      <button class="btn-learn">Learn More</button>      
+    </div>
+    <div class="car__card suv">
+      <div>
+        <img src="./images/icon-suvs.svg" alt="icon-suvs">
+        <h1 class="title">SUVs</h1>
+        <p class="description">Take an SUV for its spacious interior, power, and versatility. Perfect for your next family vacation and off-road adventures.</p>
+      </div>
+      <button class="btn-learn">Learn More</button>      
+    </div>
+    <div class="car__card luxury">
+      <div>
+        <img src="./images/icon-luxury.svg" alt="icon-luxury">
+        <h1 class="title">Luxury</h1>
+        <p class="description">Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury rental and arrive in style.</p>
+      </div>
+      <button class="btn-learn">Learn More</button>      
+    </div>
+  </main>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.  
+    Coded by <a href="https://github.com/ravitejalakkoju" target="_blank">L N S S Ravi Teja</a>.
+  </footer>
+</body>
+</html>
