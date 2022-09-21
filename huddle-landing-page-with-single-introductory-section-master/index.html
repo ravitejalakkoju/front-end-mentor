@@ -21,12 +21,13 @@
     }
     body {
       background-image: url('./images/bg-desktop.svg');
-      background-size: cover;
+      background-size: contain;
       background-color: var(--violet);
       position: relative;
       font-family: 'Poppins';
       color: white;
-      padding: 3rem;
+      padding: 2rem 3rem;
+      min-height: 90vh;
     } 
     .company__logo img {
       height: 3rem;
@@ -34,38 +35,37 @@
     }
     .company {
       display: flex;
-      justify-content: center;
       margin-top: 4rem;
     }
     .company__illustration {
-      width: 60%;
+      width: 50%;
     }
     .company__illustration img {
-      width: 95%;
+      width: 100%;
       margin: auto;
     }
     .company__details {
       padding: 3rem;
-      width: 40%;
+      width: 30%;
       color: white;
     }
     .company__slogan {
-      font-size: 3rem;
+      font-size: 2rem;
       font-weight: 600;
     }
     .company__description {
-      font-size: 1.2rem;
+      font-size: 1rem;
       width: 95%;
       font-family: 'Open Sans';
       font-weight: 400;
       line-height: 150%;
     }
     .company__register {
-      padding: 1.2rem 4rem;
+      padding: 0.75rem 3rem;
       border-radius: 2rem;
       border: none;
       color: var(--violet);
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
     .company__register:hover {
       background-color: var(--soft-magenta);
