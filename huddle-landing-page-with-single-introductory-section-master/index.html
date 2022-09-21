@@ -5,30 +5,167 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend+Deca:400">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400">
   
   <title>Frontend Mentor | Huddle landing page with single introductory section</title>
 
+  <script src="https://kit.fontawesome.com/862bd05429.js" crossorigin="anonymous"></script>
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution { font-size: 11px; text-align: center;}
+    .attribution a { color: white; }
+    :root {
+      --violet: hsl(257, 40%, 49%);
+      --soft-magenta: hsl(300, 69%, 71%);
+    }
+    body {
+      background-image: url('./images/bg-desktop.svg');
+      background-size: cover;
+      background-color: var(--violet);
+      position: relative;
+      font-family: 'Poppins';
+      color: white;
+      padding: 3rem;
+    } 
+    .company__logo img {
+      height: 3rem;
+      text-align: left;
+    }
+    .company {
+      display: flex;
+      justify-content: center;
+      margin-top: 4rem;
+    }
+    .company__illustration {
+      width: 60%;
+    }
+    .company__illustration img {
+      width: 95%;
+      margin: auto;
+    }
+    .company__details {
+      padding: 3rem;
+      word-break: 100%;
+      width: 40%;
+      color: white;
+    }
+    .company__slogan {
+      font-size: 3rem;
+      font-weight: 600;
+    }
+    .company__description {
+      font-size: 1.2rem;
+      width: 95%;
+      font-family: 'Open Sans';
+      font-weight: 400;
+      line-height: 150%;
+    }
+    .company__register {
+      padding: 1.2rem 4rem;
+      border-radius: 2rem;
+      border: none;
+      color: var(--violet);
+      font-size: 1.2rem;
+    }
+    .company__register:hover {
+      background-color: var(--soft-magenta);
+      color: white;
+      cursor: pointer;
+    }
+    footer {
+      display: flex; 
+      justify-content: space-between;
+      align-items: center;
+      margin: 1rem 0;
+    }
+    .company__social__links i{
+      padding: 1rem;
+      border: 1px solid white;
+      margin: 0 0.5rem;
+      border-radius: 2rem;
+      min-width: 1rem;
+      min-height: 1rem;
+      text-align: center;
+    }
+    .company__social__links i:hover {
+      border: 1px solid var(--soft-magenta);
+      color: var(--soft-magenta);
+      cursor: pointer;
+    }
+    @media only screen and (max-width: 500px) {
+      body {
+        background-image: url('./images/bg-mobile.svg');
+        padding: 1.5rem;
+      }
+      .company {
+        flex-direction: column;
+        margin-top: 2rem;
+      }
+      .company__illustration {
+        width: 100%;
+      }
+      .company__details{
+        text-align: center;
+        width: 100%;
+        padding: 1rem;
+        box-sizing: border-box;
+      }
+      .company__slogan {
+        font-size: 1.5rem;
+      }
+      .company__description {
+        font-size: 0.9rem;
+        width: 98%;
+      }
+      .company__register {
+        padding: 0.75rem 5rem;
+        font-size: 0.75rem;
+      }
+      footer {
+        justify-content: center;
+        flex-direction: column-reverse;
+        margin-top: 2rem;
+      }
+      .company__social__links i{
+        padding: 0.25rem;
+        border: 1px solid white;
+        margin: 0 0.5rem;
+        border-radius: 2rem;
+        min-width: 0.75rem;
+        min-height: 0.75rem;
+        text-align: center;
+        font-size: 0.75rem;
+      }
+    }
   </style>
 </head>
 <body>
+  <div class="company__logo">
+    <img src="./images/logo.svg" alt="logo">
+  </div>
+  <main class="company">
+    <div class="company__illustration">
+      <img src="./images/illustration-mockups.svg" alt="illustration-mockups">
+    </div>
+    <div class="company__details">
+      <h1 class="company__slogan">Build The Community Your Fans Will Love</h1>
 
-  Build The Community Your Fans Will Love
+      <p class="company__description">Huddle re-imagines the way we build communities. You have a voice, but so does your audience. Create connections with your users as you engage in genuine discussion. </p>
 
-  Huddle re-imagines the way we build communities. You have a voice, but so does your audience. 
-  Create connections with your users as you engage in genuine discussion. 
-
-  Register
-
+      <button class="company__register">Register</button>
+    </div>
+  </main>
   <footer>
     <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.  
-    Coded by <a href="https://github.com/ravitejalakkoju" target="_blank">L N S S Ravi Teja</a>.
+      Challenge by &nbsp;<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.  
+      Coded by &nbsp;<a href="https://github.com/ravitejalakkoju" target="_blank">L N S S Ravi Teja</a>.
     </p>
+    <div class="company__social__links">
+      <i class="fa-brands fa-facebook-f"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-instagram"></i>
+    </div>
   </footer>
 </body>
 </html>
