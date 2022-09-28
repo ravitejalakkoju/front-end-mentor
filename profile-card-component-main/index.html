@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend+Deca:400">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kumbh+Sans:400,700">
   
   <title>Frontend Mentor | Profile card component</title>
 
@@ -13,24 +13,135 @@
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+    :root {
+      --dark-cyan: hsl(185, 75%, 39%);
+      --very-very-desaturated-blue: hsl(229, 23%, 23%);
+      --dark-greyish-blue: hsl(227, 10%, 46%);
+      --dark-grey: hsl(0, 0%, 59%);
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+      font-family: 'Kumbh Sans';
+      font-size: 18px;
+      background-color: var(--dark-cyan);
+      background-image: url(./images/bg-pattern-bottom.svg), url(./images/bg-pattern-top.svg);
+      background-position: right -25% bottom -60vh, left -25% top -60vh;
+      background-repeat: no-repeat, no-repeat;
+    }
+    @media only screen and (max-width: 500px) {
+      body {
+        background-position: left -25% bottom -60vh, right -25% top -60vh;
+      }
+    }
+    .profile__card {
+      border-radius: 1rem;
+      background: white;
+      min-width: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .profile__image {
+      position: relative;
+      width: 100%;
+    }
+    .profile__picture-bg {
+      width: 100%;
+      border-radius: 1rem 1rem 0 0;
+    }
+    .profile__picture {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -30%;
+      margin: 0 auto;
+      border-radius: 50%;
+      border: 5px solid white;
+      height: 6rem;
+    }
+    .profile__details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 4rem;
+    }
+    .profile__details p {
+      margin: 0 0 0.5rem 0;
+    }
+    .profile__name {
+      font-weight: 700;
+    }
+    .profile__age {
+      color: var(--dark-grey);
+    }
+    .profile__location {
+      font-size: 0.8rem;
+      margin-bottom: 1rem !important;
+      color: var(--dark-grey);
+    }
+    .profile__engagements {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid var(--dark-grey);
+      padding: 1.5rem 1rem;
+    }
+    .profile__engagements div {
+      margin: 0 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .profile__engagements > div > p {
+      margin: 0.2rem 0;
+    }
+    .engage__count {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .engage__type {
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+    }
   </style>
 </head>
 <body>
-  Victor Crest
-  26
-  London
-
-  80K
-  Followers
-
-  803K
-  Likes
-
-  1.4K
-  Photos
-  <div class="attribution">
+  <main class="profile__card">
+    <div class="profile__image">
+      <img src="./images/bg-pattern-card.svg" class="profile__picture-bg">
+      <img src="./images/image-victor.jpg" alt="image-victor" class="profile__picture">
+    </div>
+    <div class="profile__details">
+      <p>
+        <span class="profile__name">Victor Crest</span>
+        <span class="profile__age">26</span>
+      </p>
+      <p class="profile__location">London</p>
+    </div>
+    <div class="profile__engagements">
+      <div>
+        <p class="engage__count">80K</p>
+        <p class="engage__type">Followers</p>
+      </div>
+      <div>
+        <p class="engage__count">803K</p>
+        <p class="engage__type">Likes</p>
+      </div>
+      <div>
+        <p class="engage__count">1.4K</p>
+        <p class="engage__type">Photos</p>
+      </div>
+    </div>
+  </main>
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.  
-    Coded by <a href="https://github.com/ravitejalakkoju" target="_blank">L N S S Ravi Teja</a>.
-  </div>
+    Coded by &nbsp;<a href="https://github.com/ravitejalakkoju" target="_blank">L N S S Ravi Teja</a>.
+  </footer>
 </body>
 </html>
