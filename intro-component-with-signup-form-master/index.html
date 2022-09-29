@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700">
+  
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    :root {
+      --red: hsl(0, 100%, 74%);
+      --green: hsl(154, 59%, 51%);
+      --trans-green: hsla(154, 59%, 40%, 0.3);
+      --blue: hsl(248, 32%, 49%);
+      --trans-blue: hsla(248, 32%, 49%, 0.25);
+      --dark-blue: hsl(249, 10%, 26%);
+      --grayish-blue: hsl(246, 25%, 77%);
+    }
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      background-color: var(--red);
+      background-image: url(./images/bg-intro-desktop.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100%;
+      flex-direction: column;
+      color: white;
+    }
+    body, button {
+      font-family: 'Poppins';
+      font-size: 16px;
+    }
+    .product__signup {
+      width: 60%;
+    }
+    .product__motto, .signup__form__cmp {
+      padding: 3rem;
+    }
+    .product__motto > h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 120%;
+    }
+    .signup__form__cmp {
+      min-width: 450px;
+    }
+    .signup__form__cmp, .signup__form {
+      display: flex;
+      flex-direction: column;
+    }
+    .signup__form {
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem;
+    }
+    .product__trail__button, .product__form__submit {
+      padding: 1rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.25px;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .product__trail__button {
+      background-color: var(--blue);
+      font-weight: 700;
+      box-shadow: 0 0.5rem 0 var(--trans-blue);
+      border-radius: 0.5rem;
+    }
+    .product__trail__button > span{
+      font-weight: 400;
+    }
+    .product__trail__button:hover {
+      background-color: var(--dark-blue);
+    }
+    .signup__form {
+      border-radius: 0.5rem;
+      margin-top: 1.25rem;
+      background-color: white;
+    }
+    .product__form__submit, .signup__form > input {
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+      border: 1px solid lightgray;
+      border-radius: 0.25rem;
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 0.75rem;
+    }
+    .signup__form > input {
+      font-weight: 700;
+    }
+    .signup__form > input:focus {
+      outline: 1px solid var(--blue);
+    }
+    .product__form__submit {
+      text-transform: uppercase;
+      font-weight: 500;
+      background-color: var(--green);
+      border: none !important;
+      box-shadow: inset 0 0 0 0.1rem var(--trans-green);
+    }
+    .product__form__submit:hover {
+      background-color: forestgreen;
+    }
+    .product__form__note {
+      color: lightgray;
+      font-weight: 400;
+      font-size: 0.55rem;
+    }
+    .product__form__note > a {
+      color: var(--red);
+      font-weight: 700;
+    }
+    .product__form__note > a:hover {
+      cursor: pointer;
+    }
+    @media only screen and (max-width: 864px) {
+      body {
+        background-image: url(./images/bg-intro-mobile.png);
+      }
+      .signup__form__cmp {
+        padding: 0;
+      }
+      .product__motto {
+        padding: 2rem;
+        text-align: center;
+      }
+      .product__motto > h1 {
+        font-size: 1.5rem;
+      }
+      .product__motto > p {
+        font-size: 0.9rem;
+        line-height: 150%;
+        padding: 1rem;
+      }
+      .product__signup {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+      }
+      .signup__form__cmp {
+        min-width: 95%;
+      }
+      .product__form__note {
+        text-align: center;
+        width: 70%;
+      }
+    }
+  </style>
+</head>
+<body class="center">
+  <main class="product__signup center">
+    <div class="product__motto">
+      <h1>Learn to code by watching others</h1>
+
+      <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+      but understanding how developers think is invaluable. </p>
+    </div>
+    <div class="signup__form__cmp">
+      <button class="product__trail__button">
+        Try it free 7 days &nbsp;<span>then $20/mo. thereafter</span>
+      </button>
+
+      <div class="signup__form">
+        <input type="text" name="first__name" placeholder="First Name">
+        <input type="text" name="last__name" placeholder="Last Name">
+        <input type="email" name="email" placeholder="Email Address">
+        <input type="assword" name="password" placeholder="Password">
+
+        <button class="product__form__submit">Claim your free trial</button> 
+
+        <p class="product__form__note">
+          By clicking the button, you are agreeing to our <a>Terms and Services</a>
+        </p>
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.  
+    Coded by &nbsp;<a href="https://github.com/ravitejalakkoju" target="_blank">L N S S Ravi Teja</a>.
+    </p>
+  </footer>
+</body>
+</html>
