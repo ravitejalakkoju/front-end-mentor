@@ -91,7 +91,7 @@
       margin-top: 1.25rem;
       background-color: white;
     }
-    .product__form__submit, .signup__form > input {
+    .product__form__submit, .signup__form input {
       padding: 1rem 1.25rem;
       margin-top: 1rem;
       border: 1px solid lightgray;
@@ -100,10 +100,13 @@
       box-sizing: border-box;
       font-size: 0.75rem;
     }
-    .signup__form > input {
+    .signup__form > .innerDiv {
+      width: 100%;
+    }
+    .signup__form input {
       font-weight: 700;
     }
-    .signup__form > input:focus {
+    .signup__form input:focus {
       outline: 1px solid var(--blue);
     }
     .product__form__submit {
@@ -127,6 +130,20 @@
     }
     .product__form__note > a:hover {
       cursor: pointer;
+    }
+    /*validation*/
+    .validation__message {
+      color: var(--red);
+      font-size: 0.6rem;
+      font-weight: 500;
+      font-style: italic;
+      display: flex;
+      justify-content: end;
+      margin-top: 0.25rem;
+    }
+    .invalid__input {
+      border: none !important;
+      outline: 1.5px solid var(--red);
     }
     @media only screen and (max-width: 864px) {
       body {
@@ -175,18 +192,32 @@
         Try it free 7 days &nbsp;<span>then $20/mo. thereafter</span>
       </button>
 
-      <div class="signup__form">
-        <input type="text" name="first__name" placeholder="First Name">
-        <input type="text" name="last__name" placeholder="Last Name">
-        <input type="email" name="email" placeholder="Email Address">
-        <input type="assword" name="password" placeholder="Password">
+      <form class="signup__form" name="signupForm" onsubmit="return validateForm()">
+        <div class="innerDiv">
+          <input type="text" name="firstName" placeholder="First Name" id="firstName" oninput="clearValidation(event)">
+          <span id="firstNameValidation" class="validation__message"></span>
+        </div>
+        <div class="innerDiv">
+          <input type="text" name="lastName" placeholder="Last Name" id="lastName" oninput="clearValidation(event)">
+          <span id="lastNameValidation" class="validation__message"></span>
+        </div>
+        
+        <div class="innerDiv">
+          <input type="email" name="email" placeholder="Email Address" id="email" oninput="clearValidation(event)">
+          <span id="emailValidation" class="validation__message"></span>
+        </div>
+        
+        <div class="innerDiv">
+          <input type="password" name="password" placeholder="Password" id="password" oninput="clearValidation(event)">
+          <span id="passwordValidation" class="validation__message"></span>
+        </div>
 
         <button class="product__form__submit">Claim your free trial</button> 
 
         <p class="product__form__note">
           By clicking the button, you are agreeing to our <a>Terms and Services</a>
         </p>
-      </div>
+      </form>
     </div>
   </main>
   
@@ -196,5 +227,83 @@
     Coded by &nbsp;<a href="https://github.com/ravitejalakkoju" target="_blank">L N S S Ravi Teja</a>.
     </p>
   </footer>
+
+  <script>
+    validationMessages = {
+      firstName: {
+        'required': 'First Name cannot be empty'
+      },
+      lastName: {
+        'required': 'Last Name cannot be empty'
+      },
+      email: {
+        'required': 'Email cannot be empty',
+        'pattern': 'Looks like this is not an email'
+      },
+      password: {
+        'required': 'Password cannot be empty'
+      }
+    }
+
+    var emailPattern=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/i;
+
+    function clearValidation(event) {
+      var id = event.target.id;
+      var value = event.target.value;
+      if(value == null || value == '') {
+        document.getElementById(id + 'Validation').innerHTML = validationMessages[id].required;
+        document.getElementById(id).classList.add('invalid__input');
+      } 
+      else if(id == 'email' && !emailPattern.test(value)) {
+        document.getElementById('emailValidation').innerHTML = validationMessages['email'].pattern;
+        document.getElementById('email').classList.add('invalid__input');
+      } 
+      else {
+        document.getElementById(id + 'Validation').innerHTML = '';
+        document.getElementById(id).classList.remove('invalid__input');
+      }
+    }
+    function validateForm() {
+      var firstName = document.forms.signupForm.firstName.value;
+      var lastName = document.forms.signupForm.lastName.value;
+      var email = document.forms.signupForm.email.value;
+      var password = document.forms.signupForm.password.value;
+      var isValid = true;
+
+      if(firstName == null || firstName == '') {
+        document.getElementById('firstNameValidation').innerHTML = validationMessages['firstName'].required;
+        document.getElementById('firstName').classList.add('invalid__input');
+        isValid = false;
+      }
+
+      if(lastName == null || lastName == '') {
+        document.getElementById('lastNameValidation').innerHTML = validationMessages['lastName'].required;
+        document.getElementById('lastName').classList.add('invalid__input');
+        isValid = false;
+      }
+
+      if(email == null || email == '') {
+        document.getElementById('emailValidation').innerHTML = validationMessages['email'].required;
+        document.getElementById('email').classList.add('invalid__input');
+        isValid = false;
+      } else if(!emailPattern.test(email)) {
+        document.getElementById('emailValidation').innerHTML = validationMessages['email'].pattern;
+        document.getElementById('email').classList.add('invalid__input');
+        isValid = false;
+      }
+
+      if(password == null || password == '') {
+        document.getElementById('passwordValidation').innerHTML = validationMessages['password'].required;
+        document.getElementById('password').classList.add('invalid__input');
+        isValid = false;
+      }
+
+      if (isValid) {
+        alert('Thank you for signing up to the trail, will meet you in the court of LAW');
+      }
+      
+      return isValid;
+    }
+  </script>
 </body>
 </html>
