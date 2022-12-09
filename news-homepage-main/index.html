@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,500,700,800">
   
   <title>Frontend Mentor | News homepage</title>
 
@@ -13,8 +14,13 @@
 </head>
 <body>
   <header class="header">
-    <img src="./assets/images/logo.svg">
-    <nav class="nav">
+    <img src="./assets/images/logo.svg" class="logo">
+    <div class="expand-nav__icon" onclick="openMenu(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    <nav class="nav" id="js-mobile-nav">
       <a class="nav__link">Home</a>
       <a class="nav__link">New</a>
       <a class="nav__link">Popular</a>
@@ -22,64 +28,73 @@
       <a class="nav__link">Categories</a>
     </nav>
   </header>
-  <main class="grid">
-    <div class="grid__item latest-blog">
-        The Bright Future of Web 3.0?
+  <main class="grid" id="js-grid">
+    <div class="latest-blog">
+      <picture>
+        <source media="(max-width:600px)" srcset="./assets/images/image-web-3-mobile.jpg">
+        <img src="./assets/images/image-web-3-desktop.jpg" style="width: 100%;">
+      </picture>
+      <div class="details">
+        <h1 class="title">The Bright Future of Web 3.0?</h1>
 
-  We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
-  But is it really fulfilling its promise?
+        <div class="preview">
+          <p class="text">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+          But is it really fulfilling its promise?</p>
 
-  Read more
+          <a class="read-more">Read more</a>
+        </div>
+      </div>
     </div>
-    <div class="grid__item recent-blogs">
-        New 
+    <div class="recent-blogs">
+      <h1 class="heading">New</h1>
       <ul>
         <li>
-            Hydrogen VS Electric Cars
-  Will hydrogen-fueled cars ever catch up to EVs?
+            <h2 class="title"><a href="">Hydrogen VS Electric Cars</a></h2>
+            <p class="text">Will hydrogen-fueled cars ever catch up to EVs?</p>
         </li>
         <li>
-            The Downsides of AI Artistry
-  What are the possible adverse effects of on-demand AI image generation?
+            <h2 class="title"><a href="">The Downsides of AI Artistry</a></h2>
+            <p class="text">What are the possible adverse effects of on-demand AI image generation?</p>
         </li>
         <li>
-            Is VC Funding Drying Up?
-  Private funding by VC firms is down 50% YOY. We take a look at what that means.
+            <h2 class="title"><a href="">Is VC Funding Drying Up?</a></h2>
+            <p class="text">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
         </li>
       </ul>
     </div>
-    <div class="grid__item top3-blogs">
+    <div class="top3-blogs">
       <ul>
         <li>
-            01
-  Reviving Retro PCs
-  What happens when old PCs are given modern upgrades?
+          <img src="./assets/images/image-retro-pcs.jpg">
+          <div class="preview">
+            <h1 class="rank">01</h1>
+            <h2 class="title"><a href="">Reviving Retro PCs</a></h2>
+            <p class="text">What happens when old PCs are given modern upgrades?</p>
+          </div>
         </li>
         <li>
-            02
-  Top 10 Laptops of 2022
-  Our best picks for various needs and budgets.
+          <img src="./assets/images/image-top-laptops.jpg">
+          <div class="preview">
+            <h1 class="rank">02</h1>
+            <h2 class="title"><a href="">Top 10 Laptops of 2022</a></h2>
+            <p class="text">Our best picks for various needs and budgets.</p>
+          </div>
         </li>
         <li>
-            03
-  The Growth of Gaming
-  How the pandemic has sparked fresh opportunities.
+          <img src="./assets/images/image-gaming-growth.jpg">
+          <div class="preview">
+            <h1 class="rank">03</h1>
+            <h2 class="title"><a href="">The Growth of Gaming</a></h2>
+            <p class="text">How the pandemic has sparked fresh opportunities.</p>
+          </div>
         </li>
       </ul>
     </div>
   </main>
-
-
-
-
-
-
-
-
-  
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://github.com/ravitejalakkoju" target="_blank">L N S S Ravi Teja</a>.
   </footer>
+  <script type="text/javascript" src="./script.js"></script>
 </body>
 </html>
